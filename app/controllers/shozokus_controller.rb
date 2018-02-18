@@ -6,8 +6,10 @@ class ShozokusController < ApplicationController
   def create
     if params[:file]
       bulk_create
-    else
+    elsif params[:shozoku]
       once_create
+    else
+      redirect_to shozokus_path
     end
   end
 
@@ -17,17 +19,16 @@ class ShozokusController < ApplicationController
       if  @shozoku.update(shozoku_params)
         format.js
       else
-        format.js { render json: @shozoku.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
 
   def destroy
     if params[:ids]     
-      Shozoku.where(id: params[:ids]).destroy_all
-      data = { destroy_success: 'success' }
+      Shozoku.where(id: params[:ids]).destroy_all      
       respond_to do |format|
-        format.json { render json: data }
+        format.json { render json: { status: 'OK' } }
       end
     else
       shozoku = Shozoku.find_by(id: params[:id])
@@ -65,7 +66,7 @@ class ShozokusController < ApplicationController
       if  @shozoku.save
         format.js
       else
-        format.js { render json: @shozoku.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
