@@ -1,0 +1,16 @@
+- provide(:title, (t 'title.shozokumaster'))
+nav aria-label="breadcrumb"
+  ol.breadcrumb
+    li.breadcrumb-item = link_to 'メニュー', root_path   
+    li.breadcrumb-item.active aria-current="page" 所属マスタ
+table#shozokus.table.table-striped.table-bordered.table-hover width="100%" cellspacing="0"
+  thead
+      tr
+        th ID
+        th= t('activerecord.attributes.shozoku.code')
+        th= t('activerecord.attributes.shozoku.name')
+  tbody
+    = render @shozokus
+= render 'share/import_csv_modal', import_path: shozokus_path
+= render 'edit'
+= render 'new'
