@@ -224,10 +224,14 @@ vi:
       <<: *errors
     models:
       shozoku: Sở thuộc
+      yakushoku: Vị trí
     attributes:
       shozoku:
         code: Mã sở thuộc
-        name: Tên sở thuộc   
+        name: Tên sở thuộc
+      yakushoku:
+        code: Mã vị trí
+        name: Tên vị trí  
   app:
     delete_confirm: Có muốn xóa?
     delete_data_in_month_confirm: Dữ liệu làm việc tháng này sẽ bị xóa. Có muốn xóa.

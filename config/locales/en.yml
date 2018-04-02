@@ -226,10 +226,14 @@ en:
       <<: *errors
     models:
       shozoku: Affiliation
+      yakushoku: Position
     attributes:
       shozoku:
         code: Affiliation Code
         name: Affiliation Name
+      yakushoku:
+        code: Position Code
+        name: Position Name
   app:
     delete_confirm: Do you want to delete?
     delete_data_in_month_confirm: The work data for current month will be deleted. Would you want to delete it?

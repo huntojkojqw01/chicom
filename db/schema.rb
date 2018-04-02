@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211122827) do
+ActiveRecord::Schema.define(version: 20180402083032) do
 
   create_table "shozokus", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "yakushokus", force: :cascade do |t|
     t.string "code"
     t.string "name"
     t.datetime "created_at", null: false
