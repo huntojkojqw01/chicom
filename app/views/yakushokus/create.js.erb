@@ -1,0 +1,14 @@
+model = 'yakushoku'
+
+$('form#new_' + model).clear_previous_errors()
+
+<% if @yakushoku.errors.any? %>  
+  $('form#new_' + model).render_form_errors(model, '<%=@yakushoku.errors.messages.to_json.html_safe%>')
+<% else %>
+  $('#yakushoku-new-modal').modal('hide'); 
+  $('#yakushokus').DataTable().row.add( [
+    "<%=@yakushoku.id%>",
+    "<%=@yakushoku.code%>",
+    "<%=@yakushoku.name%>"
+  ]).draw( false );
+<% end %>

@@ -1,0 +1,16 @@
+- provide(:title, (t 'title.yakushokumaster'))
+nav aria-label="breadcrumb"
+  ol.breadcrumb
+    li.breadcrumb-item = link_to 'メニュー', root_path   
+    li.breadcrumb-item.active aria-current="page" 役職マスタ
+table#yakushokus.table.table-striped.table-bordered.table-hover width="100%" cellspacing="0"
+  thead
+      tr
+        th ID
+        th= t('activerecord.attributes.yakushoku.code')
+        th= t('activerecord.attributes.yakushoku.name')
+  tbody
+    = render @yakushokus
+= render 'share/import_csv_modal', import_path: yakushokus_path
+= render 'edit'
+= render 'new'
