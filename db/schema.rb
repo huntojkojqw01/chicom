@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402083032) do
+ActiveRecord::Schema.define(version: 20180409093054) do
+
+  create_table "roles", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.integer "rank", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "shozokus", force: :cascade do |t|
     t.string "code"

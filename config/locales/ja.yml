@@ -227,6 +227,7 @@ ja:
     models:
       shozoku: 所属
       yakushoku: 役職
+      role: ロール
     attributes:
       shozoku:
         code: 所属コード
@@ -234,6 +235,10 @@ ja:
       yakushoku:
         code: 役職コード
         name: 役職
+      role:
+        code: ロールコード
+        name: ロール名
+        rank: 序列
   app:
     delete_confirm: 削除して宜しいですか？
     delete_data_in_month_confirm: 当月の勤務データを削除されます。削除して宜しいですか？

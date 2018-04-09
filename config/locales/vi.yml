@@ -225,13 +225,18 @@ vi:
     models:
       shozoku: Sở thuộc
       yakushoku: Vị trí
+      role: Quyền
     attributes:
       shozoku:
         code: Mã sở thuộc
         name: Tên sở thuộc
       yakushoku:
         code: Mã vị trí
-        name: Tên vị trí  
+        name: Tên vị trí
+      role:
+        code: Mã quyền
+        name: Tên quyền
+        rank: Cấp bậc
   app:
     delete_confirm: Có muốn xóa?
     delete_data_in_month_confirm: Dữ liệu làm việc tháng này sẽ bị xóa. Có muốn xóa.

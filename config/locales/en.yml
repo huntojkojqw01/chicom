@@ -227,6 +227,7 @@ en:
     models:
       shozoku: Affiliation
       yakushoku: Position
+      role: Role
     attributes:
       shozoku:
         code: Affiliation Code
@@ -234,6 +235,10 @@ en:
       yakushoku:
         code: Position Code
         name: Position Name
+      role:
+        code: Role Code
+        name: Role Name
+        rank: Role Rank
   app:
     delete_confirm: Do you want to delete?
     delete_data_in_month_confirm: The work data for current month will be deleted. Would you want to delete it?
