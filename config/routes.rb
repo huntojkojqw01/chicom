@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'shozokus#index'
   resources :shozokus, only: [:index, :create, :update, :destroy]
   resources :yakushokus, only: [:index, :create, :update, :destroy]
+  resources :roles, only: [:index, :create, :update, :destroy]
 end
