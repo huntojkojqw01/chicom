@@ -1,0 +1,19 @@
+#role-new-modal.modal.fade aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1" 
+  .modal-dialog role="document" 
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title = t('title.new')
+        button.close aria-label="Close" data-dismiss="modal" type="button" 
+          span aria-hidden="true"  &times;
+      .modal-body
+        = simple_form_for Role.new, :remote => true do |f|
+          = f.input :code do
+            = f.input_field :code, class: 'form-control'
+            .invalid-feedback
+          = f.input :name do
+            = f.input_field :name, class: 'form-control'
+            .invalid-feedback
+          = f.input :rank do
+            = f.input_field :rank, class: 'form-control'
+            .invalid-feedback
+          = f.button :submit, class: 'btn btn-primary'

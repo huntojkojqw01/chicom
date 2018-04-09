@@ -1,0 +1,17 @@
+model = 'role'
+
+$('form#edit_' + model).clear_previous_errors()
+
+<% if @role.errors.any? %>  
+  $('form#edit_' + model).render_form_errors(model, '<%=@role.errors.messages.to_json.html_safe%>')
+<% else %>
+  $('#role-edit-modal').modal('hide');
+  $("#roles").DataTable().row('tr.selected').remove();
+  $('#roles').DataTable().row.add([
+    "<%=@role.id%>",
+    "<%=@role.code%>",
+    "<%=@role.name%>",
+    "<%=@role.rank%>"
+    ]).draw( false );
+  $('#roles').DataTable().buttons('#edit, #destroy').nodes().addClass('disabled');
+<% end %>

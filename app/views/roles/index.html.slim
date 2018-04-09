@@ -1,0 +1,17 @@
+- provide(:title, (t 'title.rorumaster'))
+nav aria-label="breadcrumb"
+  ol.breadcrumb
+    li.breadcrumb-item = link_to 'メニュー', root_path   
+    li.breadcrumb-item.active aria-current="page" 役職マスタ
+table#roles.table.table-striped.table-bordered.table-hover width="100%" cellspacing="0"
+  thead
+      tr
+        th ID
+        th= t('activerecord.attributes.role.code')
+        th= t('activerecord.attributes.role.name')
+        th= t('activerecord.attributes.role.rank')
+  tbody
+    = render @roles
+= render 'share/import_csv_modal', import_path: roles_path
+= render 'edit'
+= render 'new'
